@@ -18,8 +18,8 @@ export default function Menu() {
             Signature <em>Dishes</em>
           </Reveal>
           <Reveal as="p" className="section-head__intro" delay={200}>
-            A short selection from our autumn carte. Each course is prepared to order from ingredients
-            delivered that morning.
+            Our autumn carte, from the classics of the bistrot to the dishes of the grande table. Each
+            course is prepared to order from ingredients delivered that morning.
           </Reveal>
         </header>
 
@@ -46,7 +46,7 @@ export default function Menu() {
         {/* Keyed on the filter so the grid re-plays its entrance each time it changes. */}
         <ul className="dishes" key={filter}>
           {visible.map((dish, i) => (
-            <li key={dish.id} className="dish" style={{ '--i': i }}>
+            <li key={dish.id} className="dish" style={{ '--i': Math.min(i, 5) }}>
               <div className="dish__media">
                 <img src={dish.image} alt={dish.alt} loading="lazy" />
                 <span className="dish__tag">{frenchLabel(dish.category)}</span>
